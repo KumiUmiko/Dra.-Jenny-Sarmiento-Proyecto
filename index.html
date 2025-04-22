@@ -365,8 +365,206 @@
     </div>
 </footer>
   
+<!-- Testimonio manipulacion-->
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const carouselContainer = document.getElementById('carouselContainer');
+    const testimonials = document.querySelectorAll('.testimonial');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dots = document.querySelectorAll('.dot');
+    
+    let currentIndex = 2; // Start with the middle testimonial active
+    const totalTestimonials = testimonials.length;
+    
+    // Initialize the carousel
+    updateCarousel();
+    
+    // Set up event listeners for the controls
+    prevBtn.addEventListener('click', goToPrevious);
+    nextBtn.addEventListener('click', goToNext);
+    
+    // Set up event listeners for the dots
+    dots.forEach(dot => {
+        dot.addEventListener('click', function() {
+            currentIndex = parseInt(this.getAttribute('data-index'));
+            updateCarousel();
+        });
+    });
+    
+    // Set up touch events for mobile swipe
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    carouselContainer.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+    }, false);
+    
+    carouselContainer.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, false);
+    
+    function handleSwipe() {
+        if (touchEndX < touchStartX - 50) {
+            // Swipe left
+            goToNext();
+        } else if (touchEndX > touchStartX + 50) {
+            // Swipe right
+            goToPrevious();
+        }
+    }
+    
+    // Set up auto-rotation
+    let autoRotateInterval = setInterval(goToNext, 5000);
+    
+    carouselContainer.addEventListener('mouseenter', function() {
+        clearInterval(autoRotateInterval);
+    });
+    
+    carouselContainer.addEventListener('mouseleave', function() {
+        autoRotateInterval = setInterval(goToNext, 5000);
+    });
+    
+    // Navigation functions
+    function goToPrevious() {
+        currentIndex = (currentIndex - 1 + totalTestimonials) % totalTestimonials;
+        updateCarousel();
+    }
+    
+    function goToNext() {
+        currentIndex = (currentIndex + 1) % totalTestimonials;
+        updateCarousel();
+    }
+    
+    function updateCarousel() {
+        const isMobile = window.innerWidth <= 576;
+        
+        testimonials.forEach((testimonial, index) => {
+            testimonial.classList.remove('active');
+            
+            if (index === currentIndex) {
+                testimonial.classList.add('active');
+            }
+        });
+        
+        // Update the dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+        
+        // Calculate the transform offset
+        let offset = 0;
+        
+        if (!isMobile) {
+            // For desktop/tablet: Center the active testimonial
+            const testimonialWidth = testimonials[0].offsetWidth + 40; // width + margin
+            offset = -currentIndex * testimonialWidth + (carouselContainer.offsetWidth / 2) - (testimonialWidth / 2);
+            
+            // Limit the offset to prevent empty space
+            const minOffset = -(totalTestimonials * testimonialWidth - carouselContainer.offsetWidth);
+            offset = Math.max(minOffset, Math.min(0, offset));
+        } else {
+            // For mobile: Show only the active testimonial
+            const testimonialWidth = carouselContainer.offsetWidth;
+            offset = -currentIndex * testimonialWidth;
+        }
+        
+        carouselContainer.style.transform = `translateX(${offset}px)`;
+        
+        // Handle visibility of testimonials for better performance
+        testimonials.forEach((testimonial, index) => {
+            const distance = Math.abs(index - currentIndex);
+            
+            if (isMobile) {
+                // On mobile, only show the active testimonial
+                testimonial.style.display = index === currentIndex ? 'block' : 'none';
+            } else {
+                // On desktop, show the nearby testimonials
+                if (distance > 2) {
+                    testimonial.classList.add('hidden-mobile');
+                } else {
+                    testimonial.classList.remove('hidden-mobile');
+                }
+            }
+        });
+    }
+    
+    // Update on window resize
+    window.addEventListener('resize', updateCarousel);
+});
 
-  <script src="/JS/testimonioindex.js"></script>
-  <script src="/JS/formulario.js"></script>
+  </script>
+
+<!-- Envio de formulario-->
+    
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('success-message');
+    
+    // Validación de campos
+    function validateField(field, errorId, condition, message) {
+        const errorElement = document.getElementById(errorId);
+        if (!condition) {
+            errorElement.style.display = 'block';
+            errorElement.textContent = message;
+            return false;
+        } else {
+            errorElement.style.display = 'none';
+            return true;
+        }
+    }
+
+    // Validar email con expresión regular
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+
+    // Validar teléfono (opcional pero si está presente debe tener formato correcto)
+    function validatePhone(phone) {
+        if (!phone) return true; // Es opcional
+        const re = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/;
+        return re.test(phone);
+    }
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Obtener valores de los campos
+        const nombre = document.getElementById('nombre').value;
+        const apellido = document.getElementById('apellido').value;
+        const email = document.getElementById('email').value;
+        const telefono = document.getElementById('telefono').value;
+        const mensaje = document.getElementById('mensaje').value;
+        
+        // Validar todos los campos
+        const isNombreValid = validateField('nombre', 'nombre-error', nombre.trim() !== '', 'Por favor ingrese su nombre');
+        const isApellidoValid = validateField('apellido', 'apellido-error', apellido.trim() !== '', 'Por favor ingrese su apellido');
+        const isEmailValid = validateField('email', 'email-error', validateEmail(email), 'Por favor ingrese un correo electrónico válido');
+        const isTelefonoValid = validateField('telefono', 'telefono-error', validatePhone(telefono), 'Por favor ingrese un número de teléfono válido');
+        const isMensajeValid = validateField('mensaje', 'mensaje-error', mensaje.trim() !== '', 'Por favor ingrese su mensaje');
+        
+        // Si todos los campos son válidos, enviar el formulario
+        if (isNombreValid && isApellidoValid && isEmailValid && isTelefonoValid && isMensajeValid) {
+            // En un entorno real, aquí iría el código para enviar los datos a un servidor
+            // Por ejemplo, utilizando fetch() o XMLHttpRequest
+            
+            // Simulamos el envío exitoso
+            setTimeout(() => {
+                form.reset();
+                successMessage.style.display = 'block';
+                
+                // Ocultamos el mensaje de éxito después de 5 segundos
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }, 1000);
+        }
+    });
+});
+
+  </script>
 </body>
 </html>
