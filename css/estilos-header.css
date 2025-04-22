@@ -12,13 +12,6 @@
 }
 
 
-
-
-
-body {
-    font-family: 'Quincy', Arial, sans-serif;
-}
-
 header.contheader{
     width: 100%;
     max-width: 100%;
@@ -31,7 +24,7 @@ header.contheader{
     align-items: center;
     margin-top: 0;
     z-index: 1000;
-    background-color: white;
+    background-color: #f2f2f2;
     justify-content: space-around;
     padding: 20px 0;
 }
@@ -53,15 +46,15 @@ ul.menu li{
 ul.menu li.items-menu a{ 
     text-decoration: none;
     color: #000;
-    font-family: 'Quincy', Arial, sans-serif;
-    font-size: 25px;
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
     
 }
 
 ul.menu li.items-menu a.boton-cita{
 
     background-color: #aa6a2d;
-    color: white;
+    color: #f2f2f2;
     padding: 15px 20px;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
@@ -69,7 +62,7 @@ ul.menu li.items-menu a.boton-cita{
 
 ul.menu li.items-menu a.boton-cita:hover{
 
-    background-color: white;
+    background-color: #f2f2f2;
     color:  #aa6a2d;
     transition: all 0.5s ease; 
     border: solid #aa6a2d 2px;

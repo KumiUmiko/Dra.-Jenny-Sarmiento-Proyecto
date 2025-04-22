@@ -5,13 +5,11 @@
     font-style: normal;
 }
 
-body{
-	font-family: 'Quincy';
-}
+
 
 :root {
 	--light-gray: #d4cfd8;
-	--white-smoke: #f1f1f1;
+	--white-smoke: #f2f2f2;
 	--black-90: #0c0c0c;
 	--goldeny: #aa6a2d;
 	--green-gray: #d3d8cf;
@@ -25,7 +23,7 @@ body{
 #section-1 {
     
 	height: 38em;
-	color: white;
+	color: #f2f2f2;
 	background-color: #222;
 
 	.content-slider {
@@ -65,13 +63,13 @@ background: linear-gradient(90deg, rgba(247,218,247,1) 0%, rgba(255,155,231,1) 1
 
 					h2 {
 						padding-bottom: 0.3em;
-						font-family: 'Quincy', Arial, sans-serif;
+						font-family: "Raleway", sans-serif;
 						font-weight: 400;
-						font-size: 2.5em;
+						font-size: 36px;
 						text-transform: none;
 					}
 					h1 {
-						font-size: 6em;
+						font-size: 48px;
 						line-height: 95%;
 					}
 					.line {
@@ -79,7 +77,7 @@ background: linear-gradient(90deg, rgba(247,218,247,1) 0%, rgba(255,155,231,1) 1
 							width: 4em;
 							height: 0.1875em;
 							margin: 2.5em auto;
-							background: white;
+							background: #f2f2f2;
 					}
 					.learn-more-button {
 						padding-bottom: 5em;
@@ -87,11 +85,11 @@ background: linear-gradient(90deg, rgba(247,218,247,1) 0%, rgba(255,155,231,1) 1
 						a {
 							padding: 0.5em 2em;
 							text-align: center;
-							font-family: 'Quincy', Arial, sans-serif;
+							font-family: "Raleway", sans-serif;
 							font-size: 0.875em;
-							color: white;
+							color: #f2f2f2;
 							text-transform: uppercase;
-							border: 0.1875em solid white;
+							border: 0.1875em solid #f2f2f2;
 							&:hover {
 								color: #e88382;
 								border-color: #e88382;
@@ -117,8 +115,8 @@ background: linear-gradient(90deg, rgba(247,218,247,1) 0%, rgba(255,155,231,1) 1
 				display: block;
 				width: 70%;
 				margin: 0 auto;
-				font-family: 'Quincy', Arial, sans-serif;
-				color: white;
+				font-family: "Raleway", sans-serif;
+				color: #f2f2f2;
 				label {
 					position: relative;
 					display: inline-block;
@@ -129,9 +127,9 @@ background: linear-gradient(90deg, rgba(247,218,247,1) 0%, rgba(255,155,231,1) 1
 					padding-top: 1em;
 					text-align: left;
 					text-transform: uppercase;
-					font-family: 'Quincy', Arial, sans-serif;
+					font-family: "Raleway", sans-serif;
 					font-size: 1em;
-					color: white;
+					color: #f2f2f2;
 					font-weight: 400;
 					cursor: pointer;
 					transition: all .3s;
@@ -141,14 +139,14 @@ background: linear-gradient(90deg, rgba(247,218,247,1) 0%, rgba(255,155,231,1) 1
 						left: 0;
 						height: 3px;
 						width: 100%;
-						background: white;
+						background: #f2f2f2;
 						z-index: 100;
 						.progressbar-fill {
 							position: inherit;
 							width: inherit;
 							height: inherit;
 							margin-left: -100%;
-							background: white;
+							background: #f2f2f2;
 						}
 					}
 					span {
@@ -171,14 +169,14 @@ background: linear-gradient(90deg, rgba(247,218,247,1) 0%, rgba(255,155,231,1) 1
 		#banner3:checked ~ nav label:nth-of-type(3),
 		#banner4:checked ~ nav label:nth-of-type(4) {
 			cursor: default;
-			color: white;
+			color: #f2f2f2;
 			transition: all .5s;
 		}
 		#banner1:checked ~ nav label:nth-of-type(1) .progressbar,
 		#banner2:checked ~ nav label:nth-of-type(2) .progressbar,
 		#banner3:checked ~ nav label:nth-of-type(3) .progressbar,
 		#banner4:checked ~ nav label:nth-of-type(4) .progressbar {
-			background: white;
+			background: #f2f2f2;
 		}
 		#banner1:checked ~ nav label:nth-of-type(1) .progressbar-fill,
 		#banner2:checked ~ nav label:nth-of-type(2) .progressbar-fill,
@@ -242,8 +240,8 @@ background: linear-gradient(90deg, rgba(247,218,247,1) 0%, rgba(255,155,231,1) 1
 	#section-1 {height: 29em;}
 	#section-1 .content-slider nav {bottom: -1em;}
 	#section-1 .content-slider nav .controls {width: 90%;}
-	#section-1 .content-slider .slider .banner .banner-inner-wrapper h2 {font-size: 2em;}
-	#section-1 .content-slider .slider .banner .banner-inner-wrapper h1 {font-size: 4.5em;}
+	#section-1 .content-slider .slider .banner .banner-inner-wrapper h2 {font-size: 36px;}
+	#section-1 .content-slider .slider .banner .banner-inner-wrapper h1 {font-size: 48px;}
 	#section-1 .content-slider .slider .banner .banner-inner-wrapper {padding-top: 5em;}
 }
 
@@ -253,7 +251,7 @@ background: linear-gradient(90deg, rgba(247,218,247,1) 0%, rgba(255,155,231,1) 1
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	background-color: white;
+	background-color: #f2f2f2;
 }
 
 .about-image {
@@ -273,13 +271,15 @@ background: linear-gradient(90deg, rgba(247,218,247,1) 0%, rgba(255,155,231,1) 1
 }
 
 .about-content h2 {
-	margin-bottom: 20px;
+	font-family: 'Quincy', Arial, sans-serif;
+	margin-bottom: 36px;
 	color: #aa6a2d;
 	font-size: 3.5em;
 }
 
 .about-content p {
 	margin-bottom: 20px;
+	font-family: "Raleway", sans-serif;
 }
 
 /* Services Section */
@@ -288,13 +288,14 @@ background: linear-gradient(90deg, rgba(247,218,247,1) 0%, rgba(255,155,231,1) 1
 background: linear-gradient(0deg,rgba(255, 255, 255, 1) 50%, rgba(170, 106, 45, 1) 50%);
 	padding: 40px 20px;
 	text-align: center;
-	color: white;
+	color: #f2f2f2;
 }
 
 .servicios-titulo {
 	font-size: 50px;
 	margin-bottom: 20px;
 	font-weight: normal;
+	font-family: 'Quincy', Arial, sans-serif;
 }
 
 .servicios-descripcion {
@@ -303,6 +304,7 @@ background: linear-gradient(0deg,rgba(255, 255, 255, 1) 50%, rgba(170, 106, 45, 
 	line-height: 1.6;
 	font-size: 16px;
 	color: #0c0c0c;
+	font-family: "Raleway", sans-serif;
 }
 
 .servicios-cards {
@@ -338,7 +340,7 @@ background: linear-gradient(0deg,rgba(255, 255, 255, 1) 50%, rgba(170, 106, 45, 
 .servicio-nombre {
 	width: 100%;
 	color: #b87333;
-	background-color: white;
+	background-color: #f2f2f2;
 	border: 1px solid #b87333;
 	border-radius: 25px;
 	padding: 8px 15px;
@@ -352,14 +354,16 @@ background: linear-gradient(0deg,rgba(255, 255, 255, 1) 50%, rgba(170, 106, 45, 
 	max-width: 1450px;
 	margin: 0 auto;
 	padding: 40px 20px;
+	font-family: 'Quincy', Arial, sans-serif;
 }
 
-h1 {
+.containerTesti h1 {
 	text-align: center;
-	font-size: 3rem;
+	font-size: 48px;
 	margin-bottom: 40px;
 	margin-top: 50px;
 	color: #333;
+	font-family: 'Quincy', Arial, sans-serif;
 }
 
 .testimonials-carousel {
@@ -379,7 +383,7 @@ h1 {
 }
 
 .testimonial {
-	background-color: white;
+	background-color: #f2f2f2;
 	border-radius: 10px;
 	padding: 25px;
 	width: 100%;
@@ -395,7 +399,7 @@ h1 {
 
 .testimonial.active {
 	background-color: #aa6a2d;
-	color: white;
+	color: #f2f2f2;
 	opacity: 1;
 	transform: scale(1);
 	z-index: 10;
@@ -413,7 +417,7 @@ h1 {
 	border-radius: 50%;
 	overflow: hidden;
 	margin-right: 15px;
-	border: 3px solid white;
+	border: 3px solid #f2f2f2;
 }
 
 .profile-img img {
@@ -423,7 +427,7 @@ h1 {
 }
 
 .profile-info h3 {
-	font-size: 1.1rem;
+	font-size: 24px;
 	margin-bottom: 5px;
 }
 
@@ -440,6 +444,7 @@ h1 {
 .testimonial-text {
 	font-size: 0.95rem;
 	line-height: 1.6;
+	font-family: "Raleway", sans-serif;
 }
 
 .carousel-controls {
@@ -450,7 +455,7 @@ h1 {
 
 .carousel-control {
 	background-color: #aa6a2d;
-	color: white;
+	color: #f2f2f2;
 	border: none;
 	width: 40px;
 	height: 40px;
@@ -503,7 +508,7 @@ h1 {
 
 @media (max-width: 768px) {
 	h1 {
-		font-size: 2rem;
+		font-size: 48px;
 		margin-bottom: 30px;
 	}
 	
@@ -528,7 +533,7 @@ h1 {
 	}
 	
 	h1 {
-		font-size: 1.8rem;
+		font-size: 48px;
 		margin-bottom: 25px;
 	}
 	
@@ -577,14 +582,15 @@ h1 {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	background-color: white;
+	background-color: #f2f2f2;
 }
 
-h1 {
-	font-size: 3rem;
+.form-container h1 {
+	font-size: 48px;
 	margin-bottom: 40px;
 	color: #333;
 	font-weight: normal;
+	font-family: 'Quincy', Arial, sans-serif;
 }
 
 .form-row {
@@ -598,11 +604,12 @@ h1 {
 	margin-bottom: 20px;
 }
 
-label {
+.form-group label {
 	display: block;
 	margin-bottom: 8px;
 	color: #666;
 	font-size: 0.9rem;
+	font-family: "Raleway", sans-serif;
 }
 
 input, textarea {
@@ -635,7 +642,7 @@ textarea {
 form#contactForm button {
 	
 	padding: 10px 40px;
-	background-color: white;
+	background-color: #f2f2f2;
 	color: #aa6a2d;
 	border: 1px solid #aa6a2d;
 	border-radius: 20px;
@@ -647,7 +654,7 @@ form#contactForm button {
 
 button:hover {
 	background-color: #aa6a2d;
-	color: white;
+	color: #f2f2f2;
 }
 
 .success-message {
@@ -661,7 +668,7 @@ button:hover {
 /* Footer */
 footer {
 	background-color: #b07a3e;
-	color: white;
+	color: #f2f2f2;
 	padding: 40px 20px 20px;
 	display: flex;
 	flex-direction: column;
@@ -698,8 +705,8 @@ footer {
 	width: 30px;
 	height: 30px;
 	margin-bottom: 10px;
-	color: white;
-	border: 2px solid white;
+	color: #f2f2f2;
+	border: 2px solid #f2f2f2;
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
@@ -710,6 +717,7 @@ footer {
 .clinic-name {
 	font-size: 0.9rem;
 	margin-bottom: 5px;
+	font-family: "Raleway", sans-serif;
 }
 
 .footer-section {
@@ -718,9 +726,10 @@ footer {
 }
 
 .footer-section h3 {
-	font-size: 1.7rem;
+	font-size: 24px;
 	margin-bottom: 15px;
 	font-weight: normal;
+	font-family: 'Quincy', Arial, sans-serif;
 }
 
 .footer-section ul {
@@ -730,10 +739,11 @@ footer {
 .footer-section ul li {
 	margin-bottom: 8px;
 	font-size: 0.85rem;
+	font-family: "Raleway", sans-serif;
 }
 
 .footer-section a {
-	color: white;
+	color: #f2f2f2;
 	text-decoration: none;
 }
 
@@ -753,7 +763,7 @@ footer {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border: 1px solid white;
+	border: 1px solid #f2f2f2;
 	border-radius: 3px;
 }
 
@@ -771,7 +781,7 @@ footer {
 }
 
 .footer-bottom a {
-	color: white;
+	color: #f2f2f2;
 	text-decoration: none;
 }
 
