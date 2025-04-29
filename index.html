@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medicina Estética y Arte</title>
+    <title>Pagina de inicio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -46,12 +46,18 @@
             </div>
             <div id="top-banner-3" class="banner">
               <div class="banner-inner-wrapper">
-               
+                <h2>Here We Are</h2>
+                <h1>We Are<br>MoGo</h1>
+                <div class="line"></div>
+                <div class="learn-more-button"><a href="#section-6">Learn More</a></div>
               </div>
             </div>
             <div id="top-banner-4" class="banner">
               <div class="banner-inner-wrapper">
-               
+                <h2>Our Contacts</h2>
+                <h1>Welcome<br>to MoGo</h1>
+                <div class="line"></div>
+                <div class="learn-more-button"><a href="#main-footer">Learn More</a></div>
               </div>
             </div>
           </div>
@@ -467,7 +473,7 @@ document.addEventListener('DOMContentLoaded', function() {
         carouselContainer.style.transform = `translateX(${offset}px)`;
         
         // Handle visibility of testimonials for better performance
-        testimonials.forEach((testimonial, index) => {
+        testimonials.forEach((testimonial, index) => {  
             const distance = Math.abs(index - currentIndex);
             
             if (isMobile) {
